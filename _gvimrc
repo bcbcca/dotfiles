@@ -1,0 +1,7 @@
+" ウインドウの幅
+set columns=120
+" ウインドウの高さ
+set lines=30
+
+"colorscheme delek
+colorscheme pyte2
