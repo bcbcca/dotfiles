@@ -1,6 +1,6 @@
-" ウインドウの幅
+" 繧ｦ繧､繝ｳ繝峨え縺ｮ蟷�
 set columns=120
-" ウインドウの高さ
+" 繧ｦ繧､繝ｳ繝峨え縺ｮ鬮倥＆
 set lines=30
 
 "colorscheme delek

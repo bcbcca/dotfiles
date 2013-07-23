@@ -9,11 +9,11 @@ set viminfo=
 
 "nmap bb :ls<CR>:buf
 
-"" «ESC‚·‚é‚Æ‰º‚Ìs‚ÉˆÚ‚Á‚Ä‚µ‚Ü‚¤EEE
-"ESC‚ÅIME‚ğŠmÀ‚ÉOFF
+"" â†“ESCã™ã‚‹ã¨ä¸‹ã®è¡Œã«ç§»ã£ã¦ã—ã¾ã†ãƒ»ãƒ»ãƒ»
+"ESCã§IMEã‚’ç¢ºå®Ÿã«OFF
 "inoremap <ESC> <ESC>:set iminsert=0<CR> 
 
-"ƒfƒtƒHƒ‹ƒg‚ÌZenkakuSpace‚ğ’è‹`
+"ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®ZenkakuSpaceã‚’å®šç¾©
 function! ZenkakuSpace()
   "highlight ZenkakuSpace cterm=underline ctermfg=darkgrey gui=underline guifg=darkgrey
   highlight ZenkakuSpace cterm=underline ctermfg=darkgrey gui=underline guifg=darkgrey guibg=darkgrey
@@ -22,21 +22,21 @@ endfunction
 if has('syntax')
   augroup ZenkakuSpace
     autocmd!
-	" ZenkakuSpace‚ğƒJƒ‰[ƒtƒ@ƒCƒ‹‚Åİ’è‚·‚é‚È‚çŸ‚Ìs‚Ííœ
+	" ZenkakuSpaceã‚’ã‚«ãƒ©ãƒ¼ãƒ•ã‚¡ã‚¤ãƒ«ã§è¨­å®šã™ã‚‹ãªã‚‰æ¬¡ã®è¡Œã¯å‰Šé™¤
 	autocmd ColorScheme       * call ZenkakuSpace()
-	" ‘SŠpƒXƒy[ƒX‚ÌƒnƒCƒ‰ƒCƒgw’è
-	autocmd VimEnter,WinEnter * match ZenkakuSpace /@/
+	" å…¨è§’ã‚¹ãƒšãƒ¼ã‚¹ã®ãƒã‚¤ãƒ©ã‚¤ãƒˆæŒ‡å®š
+	autocmd VimEnter,WinEnter * match ZenkakuSpace /ã€€/
   augroup END
   call ZenkakuSpace()
 endif
 
-" ƒ^ƒu‚Ì‰æ–Êã‚Å‚Ì•(ƒn[ƒhƒ^ƒu)
+" ã‚¿ãƒ–ã®ç”»é¢ä¸Šã§ã®å¹…(ãƒãƒ¼ãƒ‰ã‚¿ãƒ–)
 set tabstop=4
 
-" Tab‰Ÿ‚µ‚½‚Æ‚«‚Ì—Ê(ƒ\ƒtƒgƒ^ƒu)
+" TabæŠ¼ã—ãŸã¨ãã®é‡(ã‚½ãƒ•ãƒˆã‚¿ãƒ–)
 set softtabstop=0
 
-" ƒ^ƒu‚ª©“®‘}“ü‚³‚ê‚é—Ê
+" ã‚¿ãƒ–ãŒè‡ªå‹•æŒ¿å…¥ã•ã‚Œã‚‹é‡
 set shiftwidth=4
 
 set listchars=tab:>-,trail:-
@@ -63,15 +63,15 @@ nnoremap <silent> <Space>cd :<C-u>CD<CR>
 :map <C-U> <C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y>
 :map <C-D> <C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E>
 
-" grep—p F4‚ÅŸ‚ÌŒó•â S-F4‚Å‘O‚ÌŒó•â
+" grepç”¨ F4ã§æ¬¡ã®å€™è£œ S-F4ã§å‰ã®å€™è£œ
 nnoremap <silent> <F4> :cn<CR>
 nnoremap <silent> <S-F4> :cp<CR>
 
 nnoremap <silent> <F7> :let @"=expand("%")<CR>
 
-" “ú•ñ‹L˜^—p
+" æ—¥å ±è¨˜éŒ²ç”¨
 function! s:nippo()
-	let a:dir = 'C:\Users\YuMiyata\Documents\ì‹Æ˜^\'
+	let a:dir = 'C:\Users\YuMiyata\Documents\ä½œæ¥­éŒ²\'
 	let a:date = strftime('%Y_%m_%d.txt')
 	execute 'e '.a:dir.a:date
 	execute 'lcd %:p:h'
@@ -82,10 +82,10 @@ if !exists(":NIPPO")
 	command NIPPO :call s:nippo()
 endif
 
-" ŒŸõ‚µ‚½‚ç^‚ñ’†‚É¶°¿Ù‚ğ‡‚í‚¹‚é
+" æ¤œç´¢ã—ãŸã‚‰çœŸã‚“ä¸­ã«ï½¶ï½°ï½¿ï¾™ã‚’åˆã‚ã›ã‚‹
 nmap n nzz
 nmap N Nzz
 
-" ‘S¸Ø±
+" å…¨ï½¸ï¾˜ï½±
 nnoremap <silent> <Space>cl ggvG$d
 
