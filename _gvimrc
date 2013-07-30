@@ -4,4 +4,5 @@ set columns=120
 set lines=30
 
 "colorscheme delek
-colorscheme pyte2
+"colorscheme pyte2
+colorscheme molokai
