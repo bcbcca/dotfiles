@@ -7,10 +7,11 @@ set cursorline
 
 set viminfo=
 
-let localvimfile='C:\dotvim\local.vim'
-if filereadable(localvimfile)
-	source localvimfile
-endif
+"nmap bb :ls<CR>:buf
+
+"" ↓ESCすると下の行に移ってしまう・・・
+"ESCでIMEを確実にOFF
+"inoremap <ESC> <ESC>:set iminsert=0<CR> 
 
 "デフォルトのZenkakuSpaceを定義
 function! ZenkakuSpace()
