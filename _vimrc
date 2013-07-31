@@ -7,15 +7,14 @@ set cursorline
 
 set viminfo=
 
-"nmap bb :ls<CR>:buf
-
-"" ↓ESCすると下の行に移ってしまう・・・
-"ESCでIMEを確実にOFF
-"inoremap <ESC> <ESC>:set iminsert=0<CR> 
+" ローカル環境設定読み込み
+let localvimrc='C:\dotvim\_vimrc_local.vim'
+if filereadable(localvimrc)
+	execute 'source '.localvimrc
+endif
 
 "デフォルトのZenkakuSpaceを定義
 function! ZenkakuSpace()
-  "highlight ZenkakuSpace cterm=underline ctermfg=darkgrey gui=underline guifg=darkgrey
   highlight ZenkakuSpace cterm=underline ctermfg=darkgrey gui=underline guifg=darkgrey guibg=darkgrey
 endfunction
 
@@ -57,8 +56,6 @@ endfunction
 " Change current directory.
 nnoremap <silent> <Space>cd :<C-u>CD<CR>
 
-"nnoremap <silent> <Space>cp :ggvG$"*y<CR>
-
 " smooth scroll
 :map <C-U> <C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y>
 :map <C-D> <C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E>
@@ -67,20 +64,8 @@ nnoremap <silent> <Space>cd :<C-u>CD<CR>
 nnoremap <silent> <F4> :cn<CR>
 nnoremap <silent> <S-F4> :cp<CR>
 
+" F7でファイル名挿入
 nnoremap <silent> <F7> :let @"=expand("%")<CR>
-
-" 日報記録用
-function! s:nippo()
-	let a:dir = 'C:\Users\YuMiyata\Documents\作業録\'
-	let a:date = strftime('%Y_%m_%d.txt')
-	execute 'e '.a:dir.a:date
-	execute 'lcd %:p:h'
-	return
-endfunction
-
-if !exists(":NIPPO")
-	command NIPPO :call s:nippo()
-endif
 
 " 検索したら真ん中にｶｰｿﾙを合わせる
 nmap n nzz
