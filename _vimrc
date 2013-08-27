@@ -8,9 +8,9 @@ set cursorline
 set viminfo=
 
 " ローカル環境設定読み込み
-let localvimrc='C:\dotvim\_vimrc_local.vim'
-if filereadable(localvimrc)
-	execute 'source '.localvimrc
+let $localvimrc='C:\dotvim\_vimrc_local.vim'
+if filereadable($localvimrc)
+	execute 'source '.$localvimrc
 endif
 
 "デフォルトのZenkakuSpaceを定義
@@ -73,4 +73,8 @@ nmap N Nzz
 
 " 全ｸﾘｱ
 nnoremap <silent> <Space>cl ggvG$d
+
+" pathogen呼び出し
+call pathogen#incubate()
+
 
