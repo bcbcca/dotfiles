@@ -13,6 +13,14 @@ if filereadable($localvimrc)
 	execute 'source '.$localvimrc
 endif
 
+
+""""""""""""""""""""""""""""""
+"全角スペースを表示
+""""""""""""""""""""""""""""""
+"コメント以外で全角スペースを指定しているので scriptencodingと、
+"このファイルのエンコードが一致するよう注意！
+"全角スペースが強調表示されない場合、ここでscriptencodingを指定すると良い。
+scriptencoding utf-8
 "デフォルトのZenkakuSpaceを定義
 function! ZenkakuSpace()
   highlight ZenkakuSpace cterm=underline ctermfg=darkgrey gui=underline guifg=darkgrey guibg=darkgrey
