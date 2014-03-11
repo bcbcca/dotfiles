@@ -85,4 +85,15 @@ nnoremap <silent> <Space>cl ggvG$d
 " pathogen呼び出し
 call pathogen#incubate()
 
+set runtimepath+=c:/tmp/qfixapp
+let QFixHowm_Key = 'g'
 
+let howm_dir             = 'c:/howm'
+let howm_filename        = '%Y/%m/%Y-%m-%d-%H%M%S.txt'
+let howm_fileencoding    = 'cp932'
+let howm_fileformat      = 'dos'
+
+" キーコードやマッピングされたキー列が完了するのを待つ時間(ミリ秒)
+set timeout timeoutlen=3000 ttimeoutlen=100
+" プレビューや絞り込みをQuickFix/ロケーションリストの両方で有効化(デフォルト:2)
+let QFixWin_EnableMode = 1
