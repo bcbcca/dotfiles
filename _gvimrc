@@ -3,10 +3,13 @@ set columns=120
 " ウインドウの高さ
 set lines=30
 
+autocmd GUIEnter * set transparency=240
+
 "colorscheme delek
 "colorscheme molokai
 
 "colorscheme solarized
 "colorscheme pyte2
 colorscheme random
+
 
